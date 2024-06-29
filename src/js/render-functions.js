@@ -31,6 +31,10 @@ export function renderGallery(images) {
     `).join('');
 }
 
+export function clearGallery() {
+    document.getElementById('gallery').innerHTML = '';
+}
+
 export function showNotification(message, type = 'info') {
     iziToast[type]({
         message,
@@ -44,4 +48,9 @@ export function showLoader() {
 
 export function hideLoader() {
     document.getElementById('loader').style.display = 'none';
+}
+
+export function toggleLoadMoreButton(show) {
+    const loadMoreBtn = document.getElementById('load-more');
+    loadMoreBtn.style.display = show ? 'block' : 'none';
 }
